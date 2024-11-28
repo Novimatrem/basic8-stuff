@@ -37,11 +37,55 @@ IF NOT KEYP ASC("k") THEN NOT LET $bulletwide = $countwide+6
 
 IF NOT KEYP ASC("k") THEN NOT LET $bullettall = $counttall-3
 
+
+
+REM wip: WEAPON ATTACK COLLIDE TEST AGAINST OBJECT
+IF KEYP ASC("k") AND $counttall = $objecttall THEN LET $stringdisp = "HIT"
+REM ------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 IF KEYP ASC("k") THEN PLAY "L32 C"
 
 text 2, 2, $stringdisp
+text 34, 2, "str"
+
 text 2, 16, $countwide
+text 34, 16, "pwide"
+
+
 text 2, 32, $counttall
+text 34, 32, "ptall"
+
+text 2, 48, $objectwide
+text 34, 48, "owide"
+
+text 2, 64, $objecttall
+text 34, 64, "otall"
+
 
 text $countwide, $counttall, "I"
 
