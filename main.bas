@@ -1,5 +1,6 @@
 drv = driver()
 
+$kup = 1
 $string = "d"
 $string2 = "a"
 $string3 = "w"
@@ -39,23 +40,26 @@ IF NOT KEYP ASC("k") THEN NOT LET $bullettall = $counttall-3
 
 
 
-REM wip: WEAPON ATTACK COLLIDE TEST AGAINST OBJECT
-IF KEYP ASC("k") AND $counttall = $objecttall THEN LET $stringdisp = "HIT"
+
+
+
+REM wip: WEAPON ATTACK AND COLLIDE TEST AGAINST OBJECT
+IF KEY ASC("k") THEN LET $kdown = "1"
+IF KEYP ASC("k") THEN LET $kdown = "0"
+IF KEYP ASC("k") THEN LET $kdown = "0"
+
+IF KEYP ASC("k") THEN LET $kup = "1"
+IF KEY ASC("k") THEN LET $kup = "0"
+IF KEY ASC("k") THEN LET $kup = "0"
+
+
+
+REM detect valid hit at right moment
+IF KEYP ASC("k") THEN LET $kup = "0" 
+IF KEYP ASC("k") THEN LET $hitting = "1"
+
+
 REM ------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -85,6 +89,19 @@ text 34, 48, "owide"
 
 text 2, 64, $objecttall
 text 34, 64, "otall"
+
+text 2, 80, $kdown
+text 34, 80, "kdown"
+
+
+text 2, 96, $kup
+text 34, 96, "kup"
+
+
+text 2, 112, $HITTING
+text 34, 112, "HITTING"
+
+
 
 
 text $countwide, $counttall, "I"
